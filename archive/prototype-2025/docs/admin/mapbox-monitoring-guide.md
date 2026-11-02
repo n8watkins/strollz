@@ -140,14 +140,14 @@ NEXT_PUBLIC_MAPBOX_ENVIRONMENT=development
 #### Staging Environment  
 ```bash
 # Vercel environment variables
-NEXT_PUBLIC_MAPBOX_TOKEN_STAGING=pk.eyJ1Ijoic3Ryb2xsLXZpYmUtc3RhZ2luZ...
+NEXT_PUBLIC_MAPBOX_TOKEN_STAGING=pk.xxx
 NEXT_PUBLIC_MAPBOX_ENVIRONMENT=staging
 ```
 
 #### Production Environment
 ```bash
 # Vercel environment variables  
-NEXT_PUBLIC_MAPBOX_TOKEN_PROD=pk.eyJ1Ijoic3Ryb2xsLXZpYmUtcHJvZA...
+NEXT_PUBLIC_MAPBOX_TOKEN_PROD=pk.xxx
 NEXT_PUBLIC_MAPBOX_ENVIRONMENT=production
 ```
 

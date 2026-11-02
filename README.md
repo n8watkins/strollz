@@ -62,3 +62,7 @@ Screenshots of the current page are in [`docs/screenshots/`](docs/screenshots/).
 - No invented user counts, testimonials or ratings, anywhere.
 - No place note without a source.
 - Planned features and prices are labelled as planned.
+
+## License
+
+[MIT](LICENSE) © 2026 Nathan Watkins

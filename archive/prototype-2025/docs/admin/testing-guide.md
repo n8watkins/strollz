@@ -272,7 +272,7 @@ const mockMapboxResponse = {
 }
 
 // Mock token
-const mockToken = 'pk.eyJ1IjoidGVzdCIsImEiOiJjbGpkIn0'
+const mockToken = 'pk.xxx'
 ```
 
 ### Environment Variables

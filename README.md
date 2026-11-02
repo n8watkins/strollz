@@ -42,6 +42,9 @@ Environment variable (optional, read at build time):
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical URL for metadata, sitemap and Open Graph links; defaults to `https://strollz.n8builds.dev` |
 
+To set it, copy [`.env.example`](.env.example) to `.env.local` (git ignores it) and uncomment the line.
+If you keep secrets in [`pass`](https://www.passwordstore.org/), [pass-env](https://github.com/n8watkins/pass-env) is an optional alternative: list the names in a `.env.pass` file (names only, never values) and run `pass-env run -- npm run dev`.
+
 There is no sign-up form on this site.
 Every waitlist call to action links to `https://n8builds.dev/upcoming?interest=strollz#strollz` in the same tab, where the owner builds in public; the URL lives in `src/lib/site.ts`.
 
@@ -62,6 +65,15 @@ Screenshots of the current page are in [`docs/screenshots/`](docs/screenshots/).
 - No invented user counts, testimonials or ratings, anywhere.
 - No place note without a source.
 - Planned features and prices are labelled as planned.
+
+## Commits and releases
+
+Commits follow [Conventional Commits](https://www.conventionalcommits.org) (`feat: ...`, `fix: ...`, `docs: ...`), and releases are cut with [release-kit](https://github.com/n8watkins/release-kit); see [`RELEASING.md`](RELEASING.md).
+`npm install` turns on a `commit-msg` hook that checks each message, and CI checks pushed commits and pull request titles.
+
+Releasing is optional and only for this repository: a fork never has to tag, release or set up anything.
+The Release workflow runs only in `n8watkins/strollz`, so pushing a tag in a fork publishes nothing.
+The hook only checks message format; `git commit --no-verify` skips it.
 
 ## License
 

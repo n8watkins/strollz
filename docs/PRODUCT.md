@@ -206,6 +206,7 @@ Where Strollz is weaker, honestly:
 
 Decided 2026-11-01 by the owner: keep "Strollz".
 It is short, friendly and says "walking"; the trailing "z" is a little dated but memorable.
+The landing page is live at https://strollz.n8builds.dev; own domain later.
 Domain and app store listing are deferred; check trademarks and the `.com`/`.app` domains before buying (unverified today).
 
 Alternatives, kept only as a fallback if "Strollz" turns out to be unavailable:

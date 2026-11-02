@@ -139,7 +139,8 @@ Owner decisions so far:
 | 2026-11-01 | Pilot city: **Los Angeles**. |
 | 2026-11-01 | Keep the name **Strollz**. |
 | 2026-11-01 | Waitlist: interested people join at `https://n8builds.dev/upcoming?interest=strollz#strollz`, where the owner builds in public; this site has no form of its own. |
-| Deferred | Domain, contact email, budget ceiling and other details; not blocking Phase 0 work. |
+| 2026-11-01 | Landing page live at `https://strollz.n8builds.dev` (static export on Cloudflare Workers static assets); own domain later. |
+| Deferred | Own domain, contact email, budget ceiling and other details; not blocking Phase 0 work. |
 
 Los Angeles specifics:
 
@@ -157,7 +158,7 @@ Before the pilot, sample 50 random segments in each chosen neighborhood and comp
 
 Tasks:
 
-- Deploy this landing page and set `NEXT_PUBLIC_SITE_URL`; confirm the n8builds.dev waitlist page is live before sharing links.
+- Done 2026-11-01: the landing page is live at `https://strollz.n8builds.dev` (see `DEPLOY.md`); confirm the n8builds.dev waitlist page is live before sharing links.
 - Download a clipped OSM extract and Overture places for the chosen neighborhoods; stand up GraphHopper locally.
 - Write the recruiting post for 1 local subreddit (for example r/LosAngeles or a neighborhood subreddit), 1 walking club and 1 "new to LA" group.
 - Exit: landing page live, 50+ people reached, router answering locally.

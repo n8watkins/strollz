@@ -2,6 +2,9 @@ import { ImageResponse } from "next/og";
 import { VIEW, home, loopPath, segments } from "@/lib/neighbourhood";
 import { site } from "@/lib/site";
 
+// Rendered once at build time for the static export.
+export const dynamic = "force-static";
+
 export const alt = "Strollz: walk the streets you have never walked";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

@@ -22,13 +22,16 @@ The next step is a 4-week pilot in Los Angeles (decided 2026-11-01), described i
 ## Landing page
 
 A Next.js 16.4 (Turbopack) site in `src/`.
+Live at https://strollz.n8builds.dev; own domain later.
+It is a fully static export served by Cloudflare Workers static assets; see [`DEPLOY.md`](DEPLOY.md) for redeploy and rollback.
 It has no backend, sets no cookies and loads no third-party scripts; the maps are hand-drawn SVG illustrations of a fictional neighborhood.
 
 ```bash
 npm install
 npm run dev        # http://localhost:3000
-npm run build      # production build (Turbopack)
-npm start          # serve the production build
+npm run build      # static export to out/ (Turbopack)
+npm run preview    # serve out/ with the Workers runtime
+npm run deploy     # build and deploy to strollz.n8builds.dev
 npm run lint
 npm run typecheck
 ```
@@ -37,7 +40,7 @@ Environment variable (optional, read at build time):
 
 | Variable | Purpose |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical URL for metadata, sitemap and Open Graph links; defaults to `http://localhost:3000` |
+| `NEXT_PUBLIC_SITE_URL` | Canonical URL for metadata, sitemap and Open Graph links; defaults to `https://strollz.n8builds.dev` |
 
 There is no sign-up form on this site.
 Every waitlist call to action links to `https://n8builds.dev/upcoming?interest=strollz#strollz` in the same tab, where the owner builds in public; the URL lives in `src/lib/site.ts`.

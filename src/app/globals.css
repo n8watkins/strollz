@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #faf7f2;
+  --paper-deep: #f2ece2;
+  --card: #ffffff;
+  --ink: #182a25;
+  --ink-soft: #4b5b56;
+  --rule: #e4ddd1;
+  --moss: #2f6b57;
+  --moss-soft: #e3efe8;
+  --coral: #e4572e;
+  --coral-ink: #b23c17;
+  --coral-soft: #fbe7df;
+  --map-bg: #f4efe6;
+  --street: #e2dacb;
+  --street-unwalked: #b9b0a1;
+  --park: #d9e9d0;
+  --park-path: #8db27e;
+  --water: #cfe2e8;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-rule: var(--rule);
+  --color-moss: var(--moss);
+  --color-moss-soft: var(--moss-soft);
+  --color-coral: var(--coral);
+  --color-coral-ink: var(--coral-ink);
+  --color-coral-soft: var(--coral-soft);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--coral-soft);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--coral-ink);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[open] .faq-chevron {
+  transform: rotate(45deg);
+}

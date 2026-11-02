@@ -176,7 +176,7 @@ export const plans = [
 export const faqs = [
   {
     q: "Can I use Strollz today?",
-    a: "Not yet. Strollz is in development. The plan is a small pilot in one city first, then a public beta if people keep using it. There is no app to download and nothing to pay for.",
+    a: "Not yet. Strollz is in development. The plan is a small pilot in Los Angeles first, then a public beta if people keep using it. There is no app to download and nothing to pay for.",
   },
   {
     q: "What happens to my location?",
@@ -188,7 +188,7 @@ export const faqs = [
   },
   {
     q: "Will it work where I live?",
-    a: "Routes are built from OpenStreetMap, which covers most towns and cities. Sidewalk, lighting and step-free details are patchier, especially in suburbs, so those filters will say when data is missing. The pilot starts in a single city so route quality can be checked by hand.",
+    a: "Routes are built from OpenStreetMap, which covers most towns and cities. Sidewalk, lighting and step-free details are patchier, especially in suburbs, so those filters will say when data is missing. The pilot starts in one or two Los Angeles neighborhoods so route quality can be checked by hand.",
   },
   {
     q: "Is it safe to walk streets I do not know?",

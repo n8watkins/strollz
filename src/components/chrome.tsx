@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site, waitlistHref } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export function LogoMark({ className = "h-7 w-7" }: { className?: string }) {
   return (
@@ -45,12 +45,12 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
-        <Link
-          href="/#waitlist"
+        <a
+          href={site.waitlistUrl}
           className="inline-flex h-10 items-center rounded-full bg-ink px-4 text-sm font-semibold text-paper transition-colors hover:bg-moss"
         >
-          Early access
-        </Link>
+          Join the waitlist
+        </a>
       </div>
     </header>
   );
@@ -58,7 +58,6 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   const year = new Date(site.lastUpdated).getFullYear();
-  const mail = waitlistHref();
   return (
     <footer className="border-t border-rule bg-paper-deep">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr]">
@@ -79,6 +78,7 @@ export function SiteFooter() {
             <li><Link className="hover:text-ink" href="/#compare">Compare</Link></li>
             <li><Link className="hover:text-ink" href="/#pricing">Planned pricing</Link></li>
             <li><Link className="hover:text-ink" href="/#faq">FAQ</Link></li>
+            <li><a className="hover:text-ink" href={site.waitlistUrl}>Join the waitlist</a></li>
           </ul>
         </nav>
         <nav aria-label="Legal and contact">
@@ -87,17 +87,22 @@ export function SiteFooter() {
             <li><Link className="hover:text-ink" href="/privacy">Privacy</Link></li>
             <li><Link className="hover:text-ink" href="/terms">Terms</Link></li>
             <li><Link className="hover:text-ink" href="/attributions">Data and attributions</Link></li>
-            {mail && (
-              <li><a className="hover:text-ink" href={mail}>Contact</a></li>
-            )}
           </ul>
         </nav>
       </div>
       <div className="border-t border-rule">
-        <p className="mx-auto max-w-6xl px-4 py-5 text-xs text-ink-soft sm:px-6">
-          &copy; {year} {site.name}. Map illustrations on this page are drawn by hand and show a
-          fictional neighborhood.
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-ink-soft sm:flex-row sm:items-start sm:justify-between sm:gap-8 sm:px-6">
+          <p className="leading-5">
+            &copy; {year} {site.name}. Map illustrations on this page are drawn by hand and show a
+            fictional neighborhood.
+          </p>
+          <p className="shrink-0 leading-5">
+            Built by N8 at{" "}
+            <a className="font-semibold text-ink hover:underline hover:underline-offset-4" href={site.builderUrl}>
+              n8builds.dev
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

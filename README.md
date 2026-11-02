@@ -7,7 +7,7 @@ It tracks the streets you cover, like Wandrer or CityStrides, but for casual wal
 
 **Status:** concept and landing page only.
 There is no app, no accounts and no data collection yet.
-The next step is a 4-week pilot in one city, described in the delivery plan.
+The next step is a 4-week pilot in Los Angeles (decided 2026-11-01), described in the delivery plan.
 
 ## Documents
 
@@ -33,12 +33,14 @@ npm run lint
 npm run typecheck
 ```
 
-Environment variables (both optional, read at build time):
+Environment variable (optional, read at build time):
 
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical URL for metadata, sitemap and Open Graph links; defaults to `http://localhost:3000` |
-| `NEXT_PUBLIC_CONTACT_EMAIL` | When set, the waitlist button becomes a mailto link; when unset, the page says the waitlist is coming soon |
+
+There is no sign-up form on this site.
+Every waitlist call to action links to `https://n8builds.dev/upcoming?interest=strollz#strollz` in the same tab, where the owner builds in public; the URL lives in `src/lib/site.ts`.
 
 Screenshots of the current page are in [`docs/screenshots/`](docs/screenshots/).
 

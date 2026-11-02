@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         <h2>This website today</h2>
         <ul>
           <li>This site sets no cookies and runs no analytics or advertising trackers.</li>
-          <li>It has no forms and stores no personal data. If you email us, we use your email only to reply.</li>
+          <li>It has no forms and stores no personal data. The waitlist lives on n8builds.dev, which handles your email under its own privacy notice and uses it only to tell you when the pilot or beta opens.</li>
           <li>Our hosting provider may keep standard server logs (such as IP address and pages requested) for security.</li>
         </ul>
       </section>

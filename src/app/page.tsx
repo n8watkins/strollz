@@ -12,7 +12,7 @@ import {
   type Cell,
 } from "@/lib/content";
 import { coverageShares, loopNewShare } from "@/lib/neighbourhood";
-import { site, waitlistHref } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export default function Home() {
   const jsonLd = [
@@ -94,7 +94,7 @@ function Hero() {
         <div>
           <p className="inline-flex items-center gap-2 rounded-full border border-rule bg-card px-3 py-1 text-sm text-ink-soft">
             <span className="h-2 w-2 rounded-full bg-coral" aria-hidden="true" />
-            In development. Pilot planned in one city.
+            In development. Los Angeles pilot planned.
           </p>
           <h1
             id="hero-title"
@@ -107,12 +107,12 @@ function Hero() {
             new to you, with a few short notes about what you pass, each linked to its source.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              href="#waitlist"
+            <a
+              href={site.waitlistUrl}
               className="inline-flex h-12 items-center rounded-full bg-ink px-6 text-base font-semibold text-paper transition-colors hover:bg-moss"
             >
-              Get early access
-            </Link>
+              Join the waitlist
+            </a>
             <Link
               href="#how-it-works"
               className="inline-flex h-12 items-center rounded-full border border-ink/15 bg-card px-6 text-base font-semibold transition-colors hover:border-ink/40"
@@ -120,7 +120,7 @@ function Hero() {
               How it works
             </Link>
           </div>
-          <p className="mt-6 text-sm text-ink-soft">
+          <p className="mt-6 text-sm text-ink-soft text-pretty">
             Free plan planned. No ads. Walk history private by default.
           </p>
         </div>
@@ -344,7 +344,7 @@ function Compare() {
           intro="Great apps already exist for hikes, runs and directions. Strollz is for the walk itself, close to home."
         />
         <div
-          className="mt-10 overflow-x-auto rounded-2xl border border-rule bg-card"
+          className="relative mt-10 overflow-x-auto rounded-2xl border border-rule bg-card"
           role="region"
           aria-label="Comparison table, scrolls sideways on small screens"
           tabIndex={0}
@@ -488,7 +488,6 @@ function Faq() {
 }
 
 function Waitlist() {
-  const mail = waitlistHref();
   return (
     <section id="waitlist" aria-labelledby="waitlist-title" className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
       <div className="relative overflow-hidden rounded-[28px] bg-ink px-6 py-14 text-paper sm:px-12">
@@ -513,35 +512,22 @@ function Waitlist() {
         <div className="relative max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.14em] text-coral">Early access</p>
           <h2 id="waitlist-title" className="mt-3 font-display text-3xl font-semibold leading-tight sm:text-4xl">
-            Want to try it in your city?
+            Walk with the Los Angeles pilot
           </h2>
-          {mail ? (
-            <>
-              <p className="mt-4 text-lg leading-8 text-paper/80">
-                The first pilot is small: one city, a few dozen walkers, four weeks. Send a short
-                email with where you live and how you like to walk, and you will hear back when a
-                spot opens. Your email is only used for this.
-              </p>
-              <a
-                href={mail}
-                className="mt-8 inline-flex h-12 items-center rounded-full bg-paper px-6 text-base font-semibold text-ink transition-colors hover:bg-coral-soft"
-              >
-                Email to join the waitlist
-              </a>
-            </>
-          ) : (
-            <>
-              <p className="mt-4 text-lg leading-8 text-paper/80">
-                The waitlist opens before the first pilot: one city, a few dozen walkers, four
-                weeks. We are not collecting sign-ups on this page yet, so there is nothing to fill
-                in today.
-              </p>
-              <p className="mt-8 inline-flex items-center gap-2.5 rounded-full border border-dashed border-paper/35 px-5 py-2.5 text-sm font-semibold text-paper/90">
-                <span className="h-2 w-2 rounded-full bg-coral" aria-hidden="true" />
-                Waitlist coming soon
-              </p>
-            </>
-          )}
+          <p className="mt-4 text-lg leading-8 text-paper/80">
+            The first pilot is small: a few dozen walkers in one or two Los Angeles neighborhoods,
+            for four weeks. Not in LA? Join anyway: waitlist interest helps decide where Strollz goes
+            next.
+          </p>
+          <a
+            href={site.waitlistUrl}
+            className="mt-8 inline-flex h-12 items-center rounded-full bg-paper px-6 text-base font-semibold text-ink transition-colors hover:bg-coral-soft"
+          >
+            Join the waitlist
+          </a>
+          <p className="mt-4 text-sm leading-6 text-paper/70">
+            Join the waitlist on n8builds.dev, where I build in public.
+          </p>
         </div>
       </div>
     </section>

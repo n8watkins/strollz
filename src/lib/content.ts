@@ -180,7 +180,7 @@ export const faqs = [
   },
   {
     q: "What happens to my location?",
-    a: "Strollz will use your location to plan loops and, only when you choose, to record a walk. Walk history will be private by default, exportable, and deletable at any time. Shared loops blur the start point so they do not reveal your home. Location data will never be sold or used for ads. This page itself sets no cookies and collects nothing.",
+    a: "Strollz will use your location to plan loops and, only when you choose, to record a walk. Walk history will be private by default, exportable, and deletable at any time. Shared loops blur the start point so they do not reveal your home. Location data will never be sold or used for ads. This page itself sets no cookies; it uses Cloudflare Web Analytics, which is cookieless and counts visits without tracking you.",
   },
   {
     q: "Where do the notes come from?",

@@ -24,7 +24,7 @@ The next step is a 4-week pilot in Los Angeles (decided 2026-11-01), described i
 A Next.js 16.4 (Turbopack) site in `src/`.
 Live at https://strollz.n8builds.dev; own domain later.
 It is a fully static export served by Cloudflare Workers static assets; see [`DEPLOY.md`](DEPLOY.md) for redeploy and rollback.
-It has no backend, sets no cookies and loads no third-party scripts; the maps are hand-drawn SVG illustrations of a fictional neighborhood.
+It has no backend and sets no cookies; the only third-party script is the cookieless Cloudflare Web Analytics beacon, which Cloudflare injects at the edge; the maps are hand-drawn SVG illustrations of a fictional neighborhood.
 
 ```bash
 npm install

@@ -3,7 +3,7 @@ import { ProsePage } from "@/components/prose-page";
 
 export const metadata: Metadata = {
   title: "Privacy",
-  description: "How Strollz treats your data today (this site collects nothing) and the privacy rules the app is being built around.",
+  description: "How Strollz treats your data today (this site uses only cookieless visit counts) and the privacy rules the app is being built around.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -16,9 +16,16 @@ export default function PrivacyPage() {
       <section>
         <h2>This website today</h2>
         <ul>
-          <li>This site sets no cookies and runs no analytics or advertising trackers.</li>
+          <li>This site sets no cookies and runs no advertising trackers.</li>
+          <li>This site uses Cloudflare Web Analytics, which is cookieless and counts visits without tracking you. It records page views, referrers and browser, device and country information, does not store IP addresses and does not fingerprint visitors.</li>
           <li>It has no forms and stores no personal data. The waitlist lives on n8builds.dev, which handles your email under its own privacy notice and uses it only to tell you when the pilot or beta opens.</li>
           <li>Our hosting provider may keep standard server logs (such as IP address and pages requested) for security.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Who processes this data</h2>
+        <ul>
+          <li>Cloudflare hosts this website and provides Cloudflare Web Analytics.</li>
         </ul>
       </section>
       <section>

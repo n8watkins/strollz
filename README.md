@@ -75,6 +75,8 @@ Releasing is optional and only for this repository: a fork never has to tag, rel
 The Release workflow runs only in `n8watkins/strollz`, so pushing a tag in a fork publishes nothing.
 The hook only checks message format; `git commit --no-verify` skips it.
 
+The weekly security scan skips the frozen lock file of the archived prototype (see [`archive/prototype-2025/osv-scanner.toml`](archive/prototype-2025/osv-scanner.toml)).
+
 ## License
 
 [MIT](LICENSE) © 2026 Nathan Watkins

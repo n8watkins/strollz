@@ -10,7 +10,10 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "preview": "wrangler dev",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "release": "release-kit release",
+    "release:check": "release-kit check && npm run lint && npm run typecheck && npm run build",
+    "prepare": "git config core.hooksPath .githooks || true"
   },
   "engines": {
     "node": ">=20.9.0"
@@ -27,12 +30,13 @@
     "@types/react-dom": "19.3.0",
     "eslint": "10.14.0",
     "eslint-config-next": "16.4.3",
+    "release-kit": "github:n8watkins/release-kit#v2.2.0",
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3",
-    "wrangler": "4.151.3"
+    "wrangler": "4.156.2"
   },
   "allowScripts": {
-    "workerd@1.20261019.1": true,
-    "esbuild@0.28.2": true
+    "esbuild@0.28.2": true,
+    "workerd@1.20261102.1": true
   }
 }

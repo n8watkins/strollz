@@ -7,7 +7,7 @@ Effort is in focused developer-days for one person; costs are estimates marked (
 
 ## 1. Goals and constraints
 
-- Prove or kill the narrow bet with 30 to 50 real walkers in one city within about 6 weeks of starting.
+- Prove or kill the narrow bet with 30 to 50 real walkers in Los Angeles within about 6 weeks of starting.
 - Keep variable cost under $0.05 per monthly active user and fixed cost under $100 per month until the bet is proven.
 - Never ship invented numbers, notes without sources, or location data handling we would be embarrassed to explain.
 - Organic growth only: no paid acquisition (the report shows it cannot pay back).
@@ -54,7 +54,8 @@ Next.js app (route handlers / server actions)
 | Valhalla (MIT) | No native round trip, emulate with waypoints | Rich costing options | Meili map matching | Strong alternative |
 | OSRM (BSD) | No | Profiles compiled in Lua, slow to iterate | Yes | Too rigid for this use |
 
-- Host: one small VPS (4 vCPU, 8 GB RAM) running GraphHopper for the pilot metro extract, about $10 to $40 per month (verify).
+- Host: one small VPS (4 vCPU, 8 GB RAM) running GraphHopper for the pilot extract, about $10 to $40 per month (verify).
+For Los Angeles, clip the OSM extract to the pilot neighborhoods plus a buffer (or at most LA County) instead of loading all of Southern California, which keeps the graph within this RAM budget (verify).
 - Foot profile: custom model that penalizes primary and secondary roads, forbids motorways and private access, avoids steps when step-free is on, and prefers `lit=yes` where the encoded value is available (verify which OSM tags GraphHopper can encode).
 - The routing server is private: only the Next.js server calls it, so no key is ever in the browser.
 
@@ -71,7 +72,7 @@ Next.js app (route handlers / server actions)
 
 ### 2.6 Coverage storage
 
-- `segments`: one row per street segment (OSM way split at intersections), with `id`, `osm_way_id`, `geom` (LineString, SRID 4326), `length_m`, `road_class`, `lit`, `sidewalk`, `city_id`; a metro has roughly 100k to 300k rows (verify for the pilot city).
+- `segments`: one row per street segment (OSM way split at intersections), with `id`, `osm_way_id`, `geom` (LineString, SRID 4326), `length_m`, `road_class`, `lit`, `sidewalk`, `city_id`; a metro has roughly 100k to 300k rows (verify for the pilot area; the full Los Angeles metro is larger than this, see Phase 0).
 - `walks`: `id`, `user_id`, `started_at`, `duration_s`, `distance_m`, `source` (recorded, gpx), `loop_id` nullable.
 - `walk_segments`: `walk_id`, `segment_id`, `covered_fraction`; a segment counts as walked when at least 75% of its length is matched.
 - `user_coverage`: `user_id`, `segment_id`, `first_walked_at`, `times_walked` (primary key on both IDs); this is what scoring reads.
@@ -131,13 +132,37 @@ All figures (verify) at build time.
 
 ### Phase 0: preparation (2 to 3 days, before the pilot clock starts)
 
-- Owner decisions: pilot city, name and domain, contact address, budget ceiling.
-- Deploy this landing page; set `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_CONTACT_EMAIL` (or build a stored waitlist form with consent text).
-- Download the OSM extract and Overture places for the pilot city; stand up GraphHopper locally.
-- Write the recruiting post for 1 local subreddit, 1 walking club and 1 "new to the city" group.
+Owner decisions so far:
+
+| Date | Decision |
+| --- | --- |
+| 2026-11-01 | Pilot city: **Los Angeles**. |
+| 2026-11-01 | Keep the name **Strollz**. |
+| 2026-11-01 | Waitlist: interested people join at `https://n8builds.dev/upcoming?interest=strollz#strollz`, where the owner builds in public; this site has no form of its own. |
+| Deferred | Domain, contact email, budget ceiling and other details; not blocking Phase 0 work. |
+
+Los Angeles specifics:
+
+- Pick 1 to 2 walkable starter neighborhoods instead of "Los Angeles" as a whole.
+LA is a car-first region of many separate cities, and walkability changes block by block, so a pilot spread across the metro would mostly test bad streets.
+A small, dense, already-walkable area gives loop quality a fair test, lets the owner walk-check routes personally, and makes recruiting local.
+- Candidates, all to be confirmed by walking them:
+  - **Silver Lake / Echo Park**: dense, characterful streets, the reservoir and lake loops, and public stairways that make great "new street" finds; hills and hillside streets without sidewalks mean the steps and sidewalk filters get a real workout.
+  - **Pasadena** (Old Pasadena, Bungalow Heaven, South Lake): a fairly regular grid, tree-lined residential streets with sidewalks, and well-documented history, so notes should be plentiful.
+  - **Santa Monica**: flat, compact grid, continuous sidewalks and good lighting, an easy first test of the core loop; more tourists and fewer "new to the neighborhood" residents.
+- A reasonable default: Silver Lake / Echo Park as the main pilot area (the primary audience of recent movers and dog walkers is strong there), with Pasadena or Santa Monica as a flatter second area to compare against.
+- Sidewalk and lighting data quality: OSM `sidewalk`, `lit` and `highway=steps` tagging is uneven across Los Angeles and its neighboring cities, and hillside streets often have no sidewalk at all.
+Before the pilot, sample 50 random segments in each chosen neighborhood and compare tags with street view or a walk; if coverage is poor, show "unknown" rather than guessing, and check whether City of Los Angeles open data (street lights, sidewalk inventory) can fill gaps under a compatible license (verify).
+- Arterials such as Sunset Boulevard cut through the best neighborhoods, so the "avoid busy roads" penalty and crossing choices matter more than in a grid city; summer heat and shade are worth a daylight-style warning later.
+
+Tasks:
+
+- Deploy this landing page and set `NEXT_PUBLIC_SITE_URL`; confirm the n8builds.dev waitlist page is live before sharing links.
+- Download a clipped OSM extract and Overture places for the chosen neighborhoods; stand up GraphHopper locally.
+- Write the recruiting post for 1 local subreddit (for example r/LosAngeles or a neighborhood subreddit), 1 walking club and 1 "new to LA" group.
 - Exit: landing page live, 50+ people reached, router answering locally.
 
-### Phase 1: 4-week one-city pilot (about 18 to 22 days of effort)
+### Phase 1: 4-week Los Angeles pilot (about 18 to 22 days of effort)
 
 Week 1: core loop (5 to 6 days).
 - Offline loop lab first: a script that generates loops for 20 sample start points and renders them to images for manual review; tune scoring until at least 17 of 20 look like walks a local would enjoy.
@@ -146,7 +171,7 @@ Week 1: core loop (5 to 6 days).
 
 Week 2: coverage (5 to 6 days).
 - Accounts (magic link), foreground recording with Wake Lock, GPX import.
-- Segment table for the pilot city, server-side map matching, `user_coverage`.
+- Segment table for the pilot neighborhoods, server-side map matching, `user_coverage`.
 - Re-score loops by % new streets; coverage map view.
 - Exit: a walk recorded on a phone shows the right streets as walked within a minute of finishing.
 
@@ -193,7 +218,7 @@ Everything else (themes, streaks, payments) waits until people have walked at le
 | Generated loops are dull or awkward | High | High | Loop lab with manual review before any user sees a loop; route report button; fix within 24 hours |
 | Novelty fades after week 1 (Randonautica pattern) | High | High | Coverage map and weekly goal give a reason to return; measure week-by-week retention, not just sign-ups |
 | iOS PWA recording gaps | High | Medium | Wake Lock, clear prompt, GPX import, Capacitor in beta if needed |
-| OSM sidewalk and lighting data too sparse | Medium | Medium | Show "unknown" honestly; choose a pilot city with good OSM coverage |
+| OSM sidewalk and lighting data too sparse | Medium | Medium | Show "unknown" honestly; start in the LA neighborhoods with the best sampled OSM coverage (Phase 0) |
 | Hallucinated or wrong notes | Medium | High | Source-only prompts, validation rules, reports, spot checks |
 | Incumbent ships the same feature | Medium | Medium | Accept it; the bet is small and personal coverage history is portable to us only |
 | Cost overrun from AI or routing | Low | Medium | Per-place caching, hard budget cap, self-hosted router |

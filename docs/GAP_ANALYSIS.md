@@ -108,14 +108,16 @@ Legend: Reusable (port the idea or logic), Broken (exists but unfit), Missing (n
 - Trustworthy accessibility routing: step-free and sidewalk filters depend on OSM tags that are missing on many suburban streets; the pilot can only say "prefers" and show unknowns.
 - Safety guarantees: lit-street data is patchy and crime data is out of scope; the app can avoid obvious hazards (motorways, unlit footpaths where tagged) and warn about daylight, nothing more.
 - Notes everywhere: suburbs with few Wikipedia or Wikidata entries will get zero to one note per loop; the product must feel good without notes.
-- Multiple cities at launch: segment tables, place loads and manual route review are per metro; the pilot is one city.
+- Multiple cities at launch: segment tables, place loads and manual route review are per metro; the pilot is 1 to 2 neighborhoods in Los Angeles.
 - Offline use: no offline tiles or routing in the pilot.
 - Strava sync: blocked by terms for this use; GPX only.
-- Real social features or a waitlist store: nothing stores sign-ups today; the landing page says so.
+- Real social features or a waitlist store of its own: this site stores nothing; the waitlist lives on n8builds.dev, which is being built separately and is not live yet.
 
 ## 5. Owner decisions needed before building
 
-1. Pilot city (the city where the owner can personally check routes is best).
-2. Whether to keep the name "Strollz" (see [PRODUCT.md section 6](PRODUCT.md#6-name)) and which domain to buy.
-3. A contact address for the waitlist (set `NEXT_PUBLIC_CONTACT_EMAIL`) or a decision to build a stored waitlist form.
-4. Budget ceiling for the pilot (suggested: under $50 for the month, see [DELIVERY_PLAN.md](DELIVERY_PLAN.md)).
+Decided 2026-11-01: the pilot city is Los Angeles, the name stays "Strollz", and the waitlist lives on n8builds.dev.
+Still open, and deferred by the owner:
+
+1. Which 1 to 2 Los Angeles neighborhoods to start in (see [DELIVERY_PLAN.md](DELIVERY_PLAN.md), Phase 0).
+2. Which domain to buy, and a contact address.
+3. Budget ceiling for the pilot (suggested: under $50 for the month, see [DELIVERY_PLAN.md](DELIVERY_PLAN.md)).

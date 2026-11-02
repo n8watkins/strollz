@@ -2,6 +2,7 @@
 
 Status: concept, nothing shipped.
 Last reviewed: 2026-11-01.
+Owner decisions (2026-11-01): the pilot city is **Los Angeles**, and the name stays **Strollz**; domain and contact email are deferred.
 Companion documents: [market report](../MARKET_REPORT_2026-11.md), [gap analysis](GAP_ANALYSIS.md), [delivery plan](DELIVERY_PLAN.md), [docs outline](DOCS_OUTLINE.md).
 
 ## 1. Positioning
@@ -20,6 +21,7 @@ It is a well-made niche app, not a moat: the user's own walked-street history is
 ### Audience
 
 Primary launch audience: people who recently moved to a town or neighborhood and want to learn it on foot.
+The pilot recruits them in 1 to 2 walkable Los Angeles neighborhoods (candidates: Silver Lake / Echo Park, Pasadena, Santa Monica; see the delivery plan, Phase 0).
 
 Secondary audiences, in order of expected fit:
 
@@ -202,11 +204,11 @@ Where Strollz is weaker, honestly:
 
 ## 6. Name
 
-Recommendation: keep "Strollz" for the pilot.
+Decided 2026-11-01 by the owner: keep "Strollz".
 It is short, friendly and says "walking"; the trailing "z" is a little dated but memorable.
-Before spending on a domain or app store listing, check trademarks and the `.com`/`.app` domains (unverified today).
+Domain and app store listing are deferred; check trademarks and the `.com`/`.app` domains before buying (unverified today).
 
-Alternatives if "Strollz" is taken or tests poorly:
+Alternatives, kept only as a fallback if "Strollz" turns out to be unavailable:
 
 | Name | Why | Concern |
 | --- | --- | --- |
@@ -217,4 +219,4 @@ Alternatives if "Strollz" is taken or tests poorly:
 | Wanderloop | Discovery plus loop | Close to Wandrer.earth, avoid confusion |
 | Every Street | Speaks to coverage fans | Close to "run every street" community language |
 
-The pilot can test two names cheaply with two landing-page headlines in the recruiting posts.
+The pilot does not need to test names now that the name is decided.

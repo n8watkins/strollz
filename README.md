@@ -58,7 +58,6 @@ Screenshots of the current page are in [`docs/screenshots/`](docs/screenshots/).
 | `src/components/` | Header, footer, map illustrations, prose page layout |
 | `src/lib/` | Site config, page copy, illustration geometry |
 | `docs/` | Product, gap analysis, delivery plan, docs outline, screenshots |
-| `archive/prototype-2025/` | The July 2025 "StrollVibe" prototype, kept for reference only; not built, linted or deployed |
 
 ## Honesty rules
 
@@ -75,7 +74,7 @@ Releasing is optional and only for this repository: a fork never has to tag, rel
 The Release workflow runs only in `n8watkins/strollz`, so pushing a tag in a fork publishes nothing.
 The hook only checks message format; `git commit --no-verify` skips it.
 
-The weekly security scan skips the frozen lock file of the archived prototype (see [`archive/prototype-2025/osv-scanner.toml`](archive/prototype-2025/osv-scanner.toml)).
+The July 2025 "StrollVibe" prototype was removed from the tree so its frozen dependencies stop raising security alerts; it is still readable [at its last commit](https://github.com/n8watkins/strollz/tree/9f9d340b93f54a5b34e5faa617f10253328bac63/archive/prototype-2025).
 
 ## License
 

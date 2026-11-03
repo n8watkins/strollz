@@ -1,7 +1,7 @@
 # Strollz gap analysis
 
 Last reviewed: 2026-11-01.
-Compares the July 2025 prototype (now in [`archive/prototype-2025/`](../archive/prototype-2025/)) and today's open data landscape against the features in [PRODUCT.md](PRODUCT.md).
+Compares the July 2025 prototype ([archived in git history](https://github.com/n8watkins/strollz/tree/9f9d340b93f54a5b34e5faa617f10253328bac63/archive/prototype-2025)) and today's open data landscape against the features in [PRODUCT.md](PRODUCT.md).
 Code facts come from reading the archived source and from the [market report](../MARKET_REPORT_2026-11.md), which ran its tests, type check and `npm audit`.
 Anything marked "(verify)" must be confirmed against the provider's current terms before building on it.
 

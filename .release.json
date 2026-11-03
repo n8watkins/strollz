@@ -1,5 +1,6 @@
 {
   "versionFiles": [],
   "workflows": "package",
-  "repository": "n8watkins/strollz"
+  "repository": "n8watkins/strollz",
+  "visibility": "public"
 }

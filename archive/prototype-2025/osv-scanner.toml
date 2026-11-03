@@ -1,8 +1,0 @@
-# The July 2025 "StrollVibe" prototype is kept for reference only and is never
-# built, installed or deployed (see the root README). Its lock file is frozen
-# with it, so the security scan skips it instead of failing on advisories
-# nobody will fix. Delete this file if the prototype is ever revived.
-[[PackageOverrides]]
-ecosystem = "npm"
-ignore = true
-reason = "Archived reference code: not built, installed or deployed"

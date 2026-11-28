@@ -49,7 +49,6 @@ export default function Home() {
         <Compare />
         <Pricing />
         <Faq />
-        <Waitlist />
       </main>
       <SiteFooter />
     </>
@@ -107,15 +106,9 @@ function Hero() {
             new to you, with a few short notes about what you pass, each linked to its source.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
-              href={site.waitlistUrl}
-              className="inline-flex h-12 items-center rounded-full bg-ink px-6 text-base font-semibold text-paper transition-colors hover:bg-moss"
-            >
-              Join the waitlist
-            </a>
             <Link
               href="#how-it-works"
-              className="inline-flex h-12 items-center rounded-full border border-ink/15 bg-card px-6 text-base font-semibold transition-colors hover:border-ink/40"
+              className="inline-flex h-12 items-center rounded-full bg-ink px-6 text-base font-semibold text-paper transition-colors hover:bg-moss"
             >
               How it works
             </Link>
@@ -481,53 +474,6 @@ function Faq() {
               <p className="pb-6 leading-7 text-ink-soft">{f.a}</p>
             </details>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Waitlist() {
-  return (
-    <section id="waitlist" aria-labelledby="waitlist-title" className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
-      <div className="relative overflow-hidden rounded-[28px] bg-ink px-6 py-14 text-paper sm:px-12">
-        <svg
-          viewBox="0 0 320 240"
-          className="pointer-events-none absolute right-10 top-1/2 hidden w-[300px] -translate-y-1/2 lg:block"
-          aria-hidden="true"
-        >
-          <path
-            d="M40 200 L40 110 Q40 70 80 70 L170 70 L170 30 L270 30 Q290 30 290 50 L290 150 Q290 170 270 170 L130 170 L130 200 Z"
-            fill="none"
-            stroke="var(--coral)"
-            strokeWidth="5"
-            strokeLinejoin="round"
-            strokeDasharray="2 12"
-            strokeLinecap="round"
-            opacity="0.9"
-          />
-          <circle cx="40" cy="200" r="11" fill="var(--paper)" />
-          <path d="M 35 201 L 40 196 L 45 201 L 45 205 L 35 205 Z" fill="var(--ink)" />
-        </svg>
-        <div className="relative max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-coral">Early access</p>
-          <h2 id="waitlist-title" className="mt-3 font-display text-3xl font-semibold leading-tight sm:text-4xl">
-            Walk with the Los Angeles pilot
-          </h2>
-          <p className="mt-4 text-lg leading-8 text-paper/80">
-            The first pilot is small: a few dozen walkers in one or two Los Angeles neighborhoods,
-            for four weeks. Not in LA? Join anyway: waitlist interest helps decide where Strollz goes
-            next.
-          </p>
-          <a
-            href={site.waitlistUrl}
-            className="mt-8 inline-flex h-12 items-center rounded-full bg-paper px-6 text-base font-semibold text-ink transition-colors hover:bg-coral-soft"
-          >
-            Join the waitlist
-          </a>
-          <p className="mt-4 text-sm leading-6 text-paper/70">
-            Join the waitlist on n8builds.dev, where I build in public.
-          </p>
         </div>
       </div>
     </section>

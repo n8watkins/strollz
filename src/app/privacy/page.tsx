@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         <ul>
           <li>This site sets no cookies and runs no advertising trackers.</li>
           <li>This site uses Cloudflare Web Analytics, which is cookieless and counts visits without tracking you. It records page views, referrers and browser, device and country information, does not store IP addresses and does not fingerprint visitors.</li>
-          <li>It has no forms and stores no personal data. The waitlist lives on n8builds.dev, which handles your email under its own privacy notice and uses it only to tell you when the pilot or beta opens.</li>
+          <li>It has no forms and stores no personal data.</li>
           <li>Our hosting provider may keep standard server logs (such as IP address and pages requested) for security.</li>
         </ul>
       </section>

@@ -45,12 +45,6 @@ export function SiteHeader() {
             ))}
           </ul>
         </nav>
-        <a
-          href={site.waitlistUrl}
-          className="inline-flex h-10 items-center rounded-full bg-ink px-4 text-sm font-semibold text-paper transition-colors hover:bg-moss"
-        >
-          Join the waitlist
-        </a>
       </div>
     </header>
   );
@@ -78,7 +72,6 @@ export function SiteFooter() {
             <li><Link className="hover:text-ink" href="/#compare">Compare</Link></li>
             <li><Link className="hover:text-ink" href="/#pricing">Planned pricing</Link></li>
             <li><Link className="hover:text-ink" href="/#faq">FAQ</Link></li>
-            <li><a className="hover:text-ink" href={site.waitlistUrl}>Join the waitlist</a></li>
           </ul>
         </nav>
         <nav aria-label="Legal and contact">

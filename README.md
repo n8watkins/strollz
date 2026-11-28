@@ -46,7 +46,7 @@ To set it, copy [`.env.example`](.env.example) to `.env.local` (git ignores it) 
 If you keep secrets in [`pass`](https://www.passwordstore.org/), [pass-env](https://github.com/n8watkins/pass-env) is an optional alternative: list the names in a `.env.pass` file (names only, never values) and run `pass-env run -- npm run dev`.
 
 There is no sign-up form on this site.
-Every waitlist call to action links to `https://n8builds.dev/upcoming?interest=strollz#strollz` in the same tab, where the owner builds in public; the URL lives in `src/lib/site.ts`.
+The n8builds.dev waitlist for Strollz was removed on 2026-11-26, so the page has no waitlist call to action; the only links out are to n8builds.dev (where the owner builds in public) and the legal and attribution pages.
 
 Screenshots of the current page are in [`docs/screenshots/`](docs/screenshots/).
 
